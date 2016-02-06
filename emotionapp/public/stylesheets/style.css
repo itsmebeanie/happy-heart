@@ -1,8 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	text-align: center;
+	background-color: #ddd;
+	font-family: 'Lato', sans-serif;
+  font-size: 10px;
 }
 
-a {
-  color: #00B7FF;
+h1{
+		text-transform: uppercase;
+
+
+	font-size:40px;
+	letter-spacing: 1.2px;
+	padding:20px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
 }
