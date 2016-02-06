@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource stacey');
+	var obj={};
+	obj.success = true;
+	obj.message="success";
+  res.json(obj)
 });
 
 module.exports = router;
