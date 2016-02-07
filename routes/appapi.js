@@ -67,20 +67,25 @@ router.post('/', function(req, res, next) {
 	obj.message = "Post Successful!";
 
 	//Poll the database
+	console.log("querying database..................................................");
+
 	MongoClient.connect(url, function(err, db) {
 		console.log(err);
-		console.log(db);
-		var collection = db.collection('demoData');
+		// console.log(db);
+		var collection = db.collection('demodata');
 
-		console.log(collection.find({"emotionType":emotionType}));
-
-			// ,function(err,result){
-		// 	db.close();
-		// 	res.render('index', { title: 'Unsubscribe Successful'});
-		// })
+		collection.findOne({"emotionType":emotionType},function(err,result){
+			db.close();
+			console.log(result);
+			obj.tsvData = result.tsvData;
+			console.log(obj);
+			
+			console.log("Query Complete..................................................");
+		 	return  res.json(200, {data:obj});
+		});
+		
 	});
 
- 	return  res.json(200, {data:obj});
 });
 
 
