@@ -1,0 +1,32 @@
+<link href = "/stylesheets/info.css" rel = "stylesheet">
+  <p id="credit">Don't have an account?  <a href="/register" target="_blank">Sign Up</a></p>
+
+<body id="bg">
+  <div id="container">
+    <div id="imagecontainer">
+      <h1>LOGIN</h1>
+    </div>
+    
+      <div class="content">
+        <input type="text" placeholder="Your e-mail"/>
+      </div>
+      <div class="content">
+        <input type="text" placeholder="Your password"/>
+      </div>
+      <input type="submit" value="LOGIN" onClick = dothis()/>
+  </div>
+</body>
+<script src ="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function dothis(){
+  console.log('hey');
+  }
+  </script>
+<script>
+$('#imagecontainer').mousemove(function(evt){
+    var xpos = (evt.pageX /-66);
+    var ypos = (evt.pageY/-60);
+    $(this).css('background-position', xpos + 'px ' + ypos*2 + 'px');
+});
+</script>
