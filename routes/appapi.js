@@ -40,10 +40,10 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
 	//Select the data based on the request
 	var emotionType = req.body.emotionType;
-	obj.tsvData = "nothing to see here!";
 
 	//Send data file down
 	var obj={};
+	obj.tsvData = "nothing to see here!";
 
 	switch(emotionType){
 		case "calm":
