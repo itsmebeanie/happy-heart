@@ -46,7 +46,8 @@ button:hover {
 }
 
 svg{
-  background-color:rgba(255,255,255,0.3);
+  /*background-color:rgba(255,255,255,0.3);*/
+  background-color:white;
   margin-top:15px;
   width: 100%;
   padding-top:2px;
@@ -62,6 +63,7 @@ svg{
 .services {
     margin-right: 0px;
     margin-left: 0px;
+    padding: 0px;
 }
 
 #d3{
