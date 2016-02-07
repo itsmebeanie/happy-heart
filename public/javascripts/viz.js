@@ -1,6 +1,6 @@
 var myvar;
 $.ajax({
-    url: 'api/',
+    url: '/api/',
     headers: {
       'Content-Type':'application/json'
     },
