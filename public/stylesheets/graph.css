@@ -6,12 +6,12 @@ a:hover{
 }
 button {
   display: block;
-  padding: 0;
+  padding: 0px;
   width: 300px;
   background: none;
   margin: auto;
   border: 1px solid #38ceae;
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 1.5px;
   font-family: "Lato";
   color: #1ECD97;
