@@ -6,7 +6,6 @@ $.ajax({
     },
     type: 'POST',
     dataType: 'json',
-    contentType: 'application/json; charset=utf-8',
     data:
     {
         "emotionType": "calm"
