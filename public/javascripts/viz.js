@@ -1,3 +1,13 @@
+var myvar;
+$.ajax({
+  type: "POST",
+    url: 'http://happyheart.azurewebsites.net/api/',
+    contentType: 'application/json',
+data: {
+        "emotionType": "calm"
+}
+});
+
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -120,11 +130,27 @@ function displayText(){
 
 
 
+
       
 
         function clickedCircle(){
           console.log(this);
-          //openPopup(this.className);
+           var $audio = $('<audio />', { 
+      autoPlay : 'autoplay',
+            src : 'mp3s/satie.mp3'
+
+          });
+
+  
+ 
+
+   $("body").append( $audio );
+  
+    setTimeout( function( $audio ){
+      $audio.remove();
+    }, 4000, $audio );
+  
+  
           
          
       }
