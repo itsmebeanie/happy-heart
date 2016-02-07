@@ -40,6 +40,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
 	//Select the data based on the request
 	var emotionType = req.body.emotionType;
+	obj.tsvData = "nothing to see here!";
 
 	//Send data file down
 	var obj={};
@@ -63,7 +64,7 @@ router.post('/', function(req, res, next) {
 	}
 
 	obj.success = true;
-	obj.message = "success (post)";
+	obj.message = "Post Successful!";
 
 
 	MongoClient.connect(url, function(err, db) {
@@ -79,16 +80,57 @@ router.post('/', function(req, res, next) {
 		// })
 	});
 
-
-
-
  	return  res.json(200, {data:obj});
 });
 
 
 
-//TODO:
-//Change to post
+
+
+router.post('/postDemoData', function(req, res, next) {
+	//Select the data based on the request
+	var emotionType = req.body.emotionType;
+
+	//Send data file down
+	var obj={};
+
+	switch(emotionType){
+		case "calm":
+			obj.tsvData = "date	close	comment	color\n24-Apr-07-08-00	20	'hello'	#f00\n24-Apr-07-09-00	40	'this is data'	blue\n24-Apr-07-09-30	88.84	'i hate d3'	green";
+			break;
+		case "angry":
+			obj.tsvData = "file angry!";
+			break;
+		case "happy":
+			obj.tsvData = "file happy!";
+			break;
+		case "sad":
+			obj.tsvData = "file sad!";
+			break;
+		case "anxious":
+			obj.tsvData = "file anxious!";
+			break;
+	}
+
+	obj.success = true;
+	obj.message = "Post Successful!";
+
+
+	MongoClient.connect(url, function(err, db) {
+		console.log(err);
+		console.log(db);
+		var collection = db.collection('users');
+		var useremail = "test";
+
+		collection.insert({useremail:useremail});
+			// ,function(err,result){
+		// 	db.close();
+		// 	res.render('index', { title: 'Unsubscribe Successful'});
+		// })
+	});
+
+ 	return  res.json(200, {data:obj});
+});
 
 
 module.exports = router;
