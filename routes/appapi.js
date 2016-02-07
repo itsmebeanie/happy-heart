@@ -37,7 +37,7 @@ router.get('/', function(req, res, next) {
  	return  res.json(200, {data:obj});
 });
 
-router.post('/', function(req, res, next) {
+router.post('/getDemoData', function(req, res, next) {
 	//Select the data based on the request
 	var emotionType = req.body.emotionType;
 
