@@ -1,6 +1,6 @@
 var myvar;
 $.ajax({
-    url: 'http://localhost:3000/api/',
+    url: 'http://happyheart.azurewebsites.net/api/',
     headers: {
       'Content-Type':'application/json'
     },
