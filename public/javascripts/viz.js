@@ -10,7 +10,10 @@ $.ajax({
     data:
     JSON.stringify({
         "emotionType": "calm"
-    })
+    }),
+    success: function(data){
+      console.log("WINNER!");
+    }
 });
 
 
