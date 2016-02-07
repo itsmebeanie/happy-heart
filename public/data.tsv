@@ -1,4 +1,4 @@
-date	close
-24-Apr-07-08-00	20
-24-Apr-07-09-00	40
-24-Apr-07-09-30	88.84
+date	close	comment	color
+24-Apr-07-08-00	20	"hello"	#f00
+24-Apr-07-09-00	40	"this is data"	blue
+24-Apr-07-09-30	88.84	"i hate d3"	green

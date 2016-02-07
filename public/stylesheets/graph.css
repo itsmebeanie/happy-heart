@@ -1,4 +1,69 @@
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+button {
+  display: block;
+  padding: 0;
+  width: 300px;
+  background: none;
+  margin: auto;
+  border: 1px solid #38ceae;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-family: "Lato";
+  color: #1ECD97;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+  -o-transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+  -webkit-transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+  transition: background 0.4s, color 0.4s, font-size 0.05s, width 0.4s, border 0.4s;
+}
+button:hover {
+  background: #38ceae;
+  color: white;
+}
 
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+svg{
+  width: 100%;
+  text-align:center;
+
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.services {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#d3{
+  width:100%;
+}
 			
 			.axis text {
 				font-family: sans-serif;
