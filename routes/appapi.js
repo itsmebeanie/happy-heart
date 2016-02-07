@@ -40,14 +40,14 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
 	//Select the data based on the request
 	var emotionType = req.body.emotionType;
-	obj.tsvData = "nothing to see here!";
 
 	//Send data file down
 	var obj={};
+	obj.tsvData = "nothing to see here!";
 
 	switch(emotionType){
 		case "calm":
-			obj.tsvData = "date	close	comment	color\n24-Apr-07-08-00	20	'hello'	#f00\n24-Apr-07-09-00	40	'this is data'	blue\n24-Apr-07-09-30	88.84	'i hate d3'	green";
+			obj.tsvData = "date	close	comment	color\n24-Apr-07-08-00	20	'HIII'	#f00\n24-Apr-07-09-00	40	'this is data'	blue\n24-Apr-07-09-30	88.84	'i hate d3'	green";
 			break;
 		case "angry":
 			obj.tsvData = "file angry!";
@@ -66,21 +66,26 @@ router.post('/', function(req, res, next) {
 	obj.success = true;
 	obj.message = "Post Successful!";
 
+	//Poll the database
+	console.log("querying database..................................................");
 
 	MongoClient.connect(url, function(err, db) {
 		console.log(err);
-		console.log(db);
-		var collection = db.collection('users');
-		var useremail = "test";
+		// console.log(db);
+		var collection = db.collection('demodata');
 
-		collection.insert({useremail:useremail});
-			// ,function(err,result){
-		// 	db.close();
-		// 	res.render('index', { title: 'Unsubscribe Successful'});
-		// })
+		collection.findOne({"emotionType":emotionType},function(err,result){
+			db.close();
+			console.log(result);
+			obj.tsvData = result.tsvData;
+			console.log(obj);
+			
+			console.log("Query Complete..................................................");
+		 	return  res.json(200, {data:obj});
+		});
+		
 	});
 
- 	return  res.json(200, {data:obj});
 });
 
 

@@ -1,12 +1,20 @@
 var myvar;
 $.ajax({
-  type: "POST",
     url: 'http://happyheart.azurewebsites.net/api/',
-    contentType: 'application/json',
-data: {
+    headers: {
+      'Content-Type':'application/json'
+    },
+    type: 'POST',
+    dataType: 'json',
+    contentType:"application/json; charset=utf-8",
+    data:
+    JSON.stringify({
         "emotionType": "calm"
-}
-});
+    }),
+    success: function(data){
+      console.log("WINNER!");
+      var data = d3.tsv.parse(data.data.tsvData);
+     console.log(data);
 
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
@@ -180,3 +188,11 @@ function type(d) {
   d.close = +d.close;
   return d;
 }
+
+function displayData(data) {
+
+}
+
+ displayData(data);
+    }
+});
