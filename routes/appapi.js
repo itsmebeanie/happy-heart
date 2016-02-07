@@ -66,14 +66,14 @@ router.post('/', function(req, res, next) {
 	obj.success = true;
 	obj.message = "Post Successful!";
 
-
+	//Poll the database
 	MongoClient.connect(url, function(err, db) {
 		console.log(err);
 		console.log(db);
-		var collection = db.collection('users');
-		var useremail = "test";
+		var collection = db.collection('demoData');
 
-		collection.insert({useremail:useremail});
+		console.log(collection.find({"emotionType":emotionType}));
+
 			// ,function(err,result){
 		// 	db.close();
 		// 	res.render('index', { title: 'Unsubscribe Successful'});
