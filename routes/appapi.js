@@ -74,40 +74,40 @@ router.post('/', function(req, res, next) {
 
 
 
-router.post('/:user', function(req, res, next) {
-	//Select the data based on the request
-	var emotionType = req.body.emotionType;
+// router.post('/:user', function(req, res, next) {
+// 	//Select the data based on the request
+// 	var emotionType = req.body.emotionType;
 
-	//Send data file down
-	var obj={};
-	obj.tsvData = "nothing to see here!";
-	obj.success = true;
-	obj.message = "Post Successful!";
+// 	//Send data file down
+// 	var obj={};
+// 	obj.tsvData = "nothing to see here!";
+// 	obj.success = true;
+// 	obj.message = "Post Successful!";
 
-	//Poll the database
-	console.log("Posting to database..................................................");
+// 	//Poll the database
+// 	console.log("Posting to database..................................................");
 
-	MongoClient.connect(url, function(err, db) {
-		console.log(err);
-		// console.log(db);
-		var collection = db.collection('users');
-		collection.
+// 	MongoClient.connect(url, function(err, db) {
+// 		console.log(err);
+// 		// console.log(db);
+// 		var collection = db.collection('users');
+// 		collection.
 
-		db.collection.update(
-		   { user:"Jessica" },
-		   	$push: {"heartrates":[("date":"24-Apr-07-08-00", "heartrate":"70"),
-		   						("date":"24-Apr-07-08-00", "heartrate":"70"),
-		   						("date":"24-Apr-07-08-00", "heartrate":"70"),
-		   						("date":"24-Apr-07-08-00", "heartrate":"70"),
-		   						("date":"24-Apr-07-08-00", "heartrate":"70")]},
-		   { upsert: true }
-		);
+// 		db.collection.update(
+// 		   { user:"Jessica" },
+// 		   	$push: {"heartrates":[("date":"24-Apr-07-08-00", "heartrate":"70"),
+// 		   						("date":"24-Apr-07-08-00", "heartrate":"70"),
+// 		   						("date":"24-Apr-07-08-00", "heartrate":"70"),
+// 		   						("date":"24-Apr-07-08-00", "heartrate":"70"),
+// 		   						("date":"24-Apr-07-08-00", "heartrate":"70")]},
+// 		   { upsert: true }
+// 		);
 			
-		console.log("Query Complete..................................................");
-		return  res.json(200, {data:obj});
-	});
+// 		console.log("Query Complete..................................................");
+// 		return  res.json(200, {data:obj});
+// 	});
 		
-});
+// });
 
 });
 
