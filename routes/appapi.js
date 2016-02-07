@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+var url = "mongodb://happyheart:brown2016@ds058548.mongolab.com:58548/happyheart";
+
 /* GET data. */
 router.get('/', function(req, res, next) {
 	//Select the data based on the request
@@ -60,6 +64,24 @@ router.post('/', function(req, res, next) {
 
 	obj.success = true;
 	obj.message = "success (post)";
+
+
+	MongoClient.connect(url, function(err, db) {
+		console.log(err);
+		console.log(db);
+		var collection = db.collection('users');
+		var useremail = "test";
+
+		collection.insert({useremail:useremail});
+			// ,function(err,result){
+		// 	db.close();
+		// 	res.render('index', { title: 'Unsubscribe Successful'});
+		// })
+	});
+
+
+
+
  	return  res.json(200, {data:obj});
 });
 
