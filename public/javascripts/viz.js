@@ -1,12 +1,16 @@
 var myvar;
 $.ajax({
-    type: "POST",
-    url: 'http://happyheart.azurewebsites.net/api/',
-    contentType: 'application/json',
-    data: {
-        "emotionType": "calm"
+    url: 'http://localhost:3000/api/',
+    headers: {
+      'Content-Type':'application/json'
     },
-    type:"json";
+    type: 'POST',
+    dataType: 'json',
+    contentType: 'application/json; charset=utf-8',
+    data:
+    {
+        "emotionType": "calm"
+    }
 });
 
 
